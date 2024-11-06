@@ -1,27 +1,27 @@
-# Instructions
+# Web API Interaction - Project Overview
 
-A **Web API** allows our applications to communicate - **request** resources and **receive** responses - over the internet. 
+In this project, you'll be **building and exporting methods** to interact with a **Web API** that provides a **JSON** database containing user information. Each user in the database has a unique **ID number**, along with a **First Name**, **Last Name**, and **email address**. We’ll be working with the `json-server` npm module to simulate a server environment and manage user data.
 
-**For your end of module assessment, you will be writing your own methods for interacting with a Web API.**
+## Project Tasks and Methods
 
-This Web API will serve a **JSON** database containing a list of **users**. Each user will have an associated **id** number, a **First Name**, a **Last Name**, and an **email** address. You will **teach yourself** how to interact with an **npm** module named `json-server`.
+You’ll be writing methods to carry out each of the following actions with the `json-server` database:
 
+### 1. `getServerURL()`
+   - **Purpose**: This method will **return the URL** of your JSON server.
+   - **How It Works**: Simply run this function to receive the URL for your server instance. This URL will be used in other methods to interact with the database.
 
-## Tasks
+### 2. `listUsers()`
+   - **Purpose**: Print a list of **all users** from the JSON server database.
+   - **How It Works**: This method fetches and logs the **entire user list** from the server to the console. It’s a simple way to view all user data available in the JSON database at once.
 
-1. Create and export a method to **return** the **URL** of the server from the SD-12-1: AssessmentServer-Individual project.
-    * The `getServerURL()` method should **return** the URL of your running JSON server.
+### 3. `addUser(first_name, last_name, email)`
+   - **Purpose**: Add a new user to the JSON server database.
+   - **How It Works**: This method will take three parameters – `<first_name>`, `<last_name>`, and `<email>`. It will then assign the new user a unique ID (sequential to the last existing user ID) and store the user data on the JSON server.
 
-2. Create and export a method to **print** a list of **users** from the JSON server.
-    * The `listUsers()` method should simply print the **entire** JSON response, containing the list of **users**, to the console.
+### 4. `delUser(id)`
+   - **Purpose**: Delete an existing user from the JSON server database.
+   - **How It Works**: When provided with an `<id>`, this method will delete the user with the matching ID from the server database.
 
-3. Create and export a method to **add** a new user to the JSON server.
-    * The `addUser()` method should:
-      * Take **3** inputs as follows: `addUser(<first_name>, <last_name>, <email>)`
-      * Result in a complete new user being added to the JSON server with a **new, sequential, unique id number**.
-        * For example: if the highest id number in the existing list is `4`, then this new id number should be `5`.
-
-4. Create and export a method to **delete** a user from the JSON server.
-    * The `delUser()` method should:
-      * Take an **id** number as input as follows: `delUser(<id>)`
-      * Result in the user matching that **id** number being deleted from the JSON server.
+---
+  
+> **NOTE**: Ensure `json-server` is installed and running so that each method can properly interact with the server.
